@@ -1,0 +1,17 @@
+.ingredients {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  .ingredients__heading {
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .ingredients__box {
+  }
+  
+  .ingredients__text {
+  
+  }

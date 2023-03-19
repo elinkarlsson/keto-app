@@ -1,0 +1,26 @@
+.instructions {
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.intructions__heading {
+  text-align: center;
+  margin-top: 0;
+}
+
+.instructions__box {
+  display: grid;
+  grid-template-columns: 20px auto;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.instructions__number {
+  font-weight: bold;
+  padding: 0 0 10px 0;
+}
+
+.instructions__text {
+
+}

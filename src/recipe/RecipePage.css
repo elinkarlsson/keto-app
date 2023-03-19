@@ -1,0 +1,29 @@
+.recipe {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .recipe {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recipe__name {
+  text-align: center;
+}
+
+.recipe__ingress {
+  text-align: center;
+}
+
+.recipe__image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.recipe__ingredients {
+  margin-bottom: 10px;
+}
