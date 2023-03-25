@@ -13,12 +13,3 @@ export const GetRecipes = async (): Promise<AxiosResponse<Recipe[]>> => {
     throw new Error(error?.message ?? 'Something went wrong while fetching recipes.');
   }
 };
-
-export const GetRecipe = async (id: number): Promise<AxiosResponse<Recipe>> => {
-  try {
-    return await client.get(`/recipes/${id}`, {
-    });
-  } catch (error: any) {
-    throw new Error(error?.message ?? 'Something went wrong while fetching recipes.');
-  }
-};

@@ -1,35 +1,19 @@
-import { useEffect, useState } from 'react';
+
 import Spinner from '../components/Spinner';
-import { Recipe } from '../models/Recipe';
-import { GetRecipes } from '../services/recipe.service';
+import { useRecipes } from '../recipes-provider/RecipesProvider';
 import RecipeCard from './recipe-card/RecipeCard';
 import './RecipesPage.css';
 
 const RecipesPage = () => {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [loading, setLoading] = useState<boolean>();
-  const [error, setError] = useState<string>();
-
-  useEffect(() => {
-    setLoading(true);
-    GetRecipes().then((response) => {
-      setRecipes(response.data);
-      setLoading(false);
-    })
-      .catch((errorMessage) => {
-        setError(errorMessage);
-        setLoading(false);
-        console.log(errorMessage);
-      })
-  }, []);
+  const recipesState = useRecipes();
 
   return <div className='page'>
-    {loading ?
+    {recipesState.loading ?
       <Spinner></Spinner> :
-      <>{error ?
-        <p>{error}</p> :
+      <>{recipesState.error ?
+        <p>{recipesState.error}</p> :
         <div className='recipes-gallery'>
-          {recipes.map(recipe => {
+          {recipesState.recipes.map(recipe => {
             return (
               <RecipeCard key={recipe.name} recipe={recipe} />
             )

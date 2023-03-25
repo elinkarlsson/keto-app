@@ -1,36 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
-import { Recipe } from '../models/Recipe';
-import { GetRecipes } from '../services/recipe.service';
+import { useParams } from 'react-router-dom';
+import { useRecipes } from '../recipes-provider/RecipesProvider';
 import Ingredients from './ingredients/Ingredients';
 import Instructions from './instructions/Instructions';
 import './RecipePage.css';
 
 const RecipePage = () => {
   const { id } = useParams();
-  const [recipe, setRecipe] = useState<Recipe>();
-  const [loading, setLoading] = useState<boolean>();
-  const [error, setError] = useState<string>();
-
-  useEffect(() => {
-    setLoading(true);
-    GetRecipes().then((response) => {
-      setRecipe(response.data.find(x => x.id === id));
-      setLoading(false);
-    })
-      .catch((errorMessage) => {
-        setError(errorMessage);
-        setLoading(false);
-        console.log(errorMessage);
-      })
-  }, []);
+  const recipesState = useRecipes();
+  const recipe = recipesState.recipes.find(x => x.id === id);
 
   return <div className='page'>
-    {loading ?
+    {recipesState.loading ?
       <Spinner></Spinner> :
-      <>{!recipe || error ?
-        <p>{error}</p> :
+      <>{!recipe || recipesState.error ?
+        <p>{recipesState.error}</p> :
         <div className='recipe'>
           <div>
             <h1 className='recipe__name'>{recipe.name}</h1>
