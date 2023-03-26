@@ -1,5 +1,6 @@
 export interface Article {
-  name: string,
-  created: string,
-  body: string,
+  id: number;
+  name: string;
+  created: string;
+  body: string;
 }

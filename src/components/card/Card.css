@@ -1,0 +1,38 @@
+.card {
+    background-color: var(--secondary-background);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card__link {
+    text-decoration: none;
+  }
+  
+  .card__image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card__name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .card__ingress {
+    overflow: hidden;
+    position: relative;
+    max-height: 2.4em;
+  }
+  
+  .card__ingress:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 1.2em;
+    width: 50%;
+    height: 1.2em;
+    background-image: linear-gradient(to right, rgba(243,243,243,0), rgba(243,243,243,1));
+  }
