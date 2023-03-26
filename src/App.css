@@ -3,17 +3,18 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #f3f3f3;
-  border: 1px solid #e7e7e7;
+  background-color: var(--secondary-background);
+  border: 1px solid var(--border-color);
   position: fixed;
   top: 0;
   width: 100%;
 }
 
 .nav__brand {
-  font-family: 'Pacifico', serif;
+  font-family: 'Londrina Outline', serif;
+  font-weight: bold;
   text-shadow: 4px 4px 4px #aaa;
-  font-size: 27px;
+  font-size: 43px;
   padding: 5px 22px!important;
 }
 
@@ -23,15 +24,19 @@
 
 .nav__item__link {
   display: block;
-  color: #666666;
+  color: var(--black);
   text-align: center;
   padding: 20px 22px;
   text-decoration: none;
 }
 
 .nav__item__link--active {
-  background-color: #008CBA;
-  color: white;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.nav__item__link--active:hover {
+  color: var(--white);
 }
 
 .page {

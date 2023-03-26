@@ -22,7 +22,7 @@ const RecipesPage = () => {
         </div>
       }</>
     }
-  </div >
+  </div>
 }
 
 export default RecipesPage;

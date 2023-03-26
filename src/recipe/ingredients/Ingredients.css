@@ -1,5 +1,5 @@
 .ingredients {
-    background-color: #f3f3f3;
+    background-color: var(--secondary-background);
     border-radius: 20px;
     padding: 20px;
   }
@@ -9,9 +9,3 @@
     margin-top: 0;
   }
   
-  .ingredients__box {
-  }
-  
-  .ingredients__text {
-  
-  }
