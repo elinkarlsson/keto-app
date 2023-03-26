@@ -12,17 +12,15 @@ const RecipesProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setLoading(true);
-    if (recipes.length === 0) {
-      GetRecipes().then((response) => {
-        setRecipes(response.data);
+    GetRecipes().then((response) => {
+      setRecipes(response.data);
+      setLoading(false);
+    })
+      .catch((error) => {
+        setError(error);
         setLoading(false);
+        console.log(error);
       })
-        .catch((error) => {
-          setError(error);
-          setLoading(false);
-          console.log(error);
-        })
-    }
   }, []);
 
   return <RecipesContext.Provider value={{ recipes, loading, error }}>{children}</RecipesContext.Provider>;
