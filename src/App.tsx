@@ -1,8 +1,7 @@
-import React from 'react';
 import './App.css';
 import HomePage from './home/HomePage';
 import Navigation from './navigation/Navigation';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import ArticlesPage from './articles/ArticlesPage';
 import RecipesPage from './recipes/RecipesPage';
 import NoPage from './no-page/NoPage';
@@ -15,7 +14,7 @@ const App = () => {
     <div className="App">
       <RecipesProvider>
         <ArticlesProvider>
-          <BrowserRouter>
+          <HashRouter>
             <Navigation></Navigation>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -24,7 +23,7 @@ const App = () => {
               <Route path="artiklar" element={<ArticlesPage />} />
               <Route path="*" element={<NoPage />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </ArticlesProvider>
       </RecipesProvider>
     </div>
