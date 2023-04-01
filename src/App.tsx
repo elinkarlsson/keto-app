@@ -8,6 +8,7 @@ import NoPage from './no-page/NoPage';
 import RecipePage from './recipe/RecipePage';
 import RecipesProvider from './recipes-provider/RecipesProvider';
 import ArticlesProvider from './articles-provider/ArticlesProvider';
+import SearchPage from './search/SearchPage';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Route path="/recept/:id" element={<RecipePage />} />
               <Route path="/recept/" element={<RecipesPage />} />
               <Route path="artiklar" element={<ArticlesPage />} />
+              <Route path="sok" element={<SearchPage />} />
               <Route path="*" element={<NoPage />} />
             </Routes>
           </HashRouter>

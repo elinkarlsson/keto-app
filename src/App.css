@@ -59,3 +59,20 @@
     margin-right: 20px;
   }
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+label {
+  display: none;
+}
+
+input {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: medium;
+  padding: 10px;
+}

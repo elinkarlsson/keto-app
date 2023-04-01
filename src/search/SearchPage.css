@@ -1,0 +1,7 @@
+.search__input {
+  margin-bottom: 10px;
+}
+
+.search__input-field {
+  width: calc(100% - 20px);
+}
